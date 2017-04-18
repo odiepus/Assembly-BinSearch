@@ -1,0 +1,26 @@
+﻿  Source.cpp
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(134): warning C4405: 'INC': identifier is reserved word
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(135): error C2400: inline assembler syntax error in 'first operand'; found 'newline'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(136): error C2400: inline assembler syntax error in 'first operand'; found 'newline'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(138): error C2414: illegal number of operands
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(138): error C2400: inline assembler syntax error in 'first operand'; found ':'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(139): error C2400: inline assembler syntax error in 'opcode'; found ':'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(139): warning C4405: 'lea': identifier is reserved word
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(147): error C2400: inline assembler syntax error in 'opcode'; found 'CMPCHARS'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(149): warning C4405: 'HIGH': identifier is reserved word
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(157): error C2400: inline assembler syntax error in 'opcode'; found 'LOAD'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(159): warning C4405: 'LOW': identifier is reserved word
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(167): error C2400: inline assembler syntax error in 'opcode'; found 'LOAD'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(177): warning C4405: 'eax': identifier is reserved word
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(177): error C2400: inline assembler syntax error in 'opcode'; found 'eax'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(185): error C2415: improper operand type
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(219): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(226): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(233): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(240): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(247): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
