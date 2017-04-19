@@ -99,6 +99,7 @@ int inlineBinarySearch(char *searchWord, int *numSteps)
 	int x = strlen(searchWord);
 
 
+
 	__asm {
 
 		//mov elementNumber, 4	// puts a 4 in the return value
@@ -123,78 +124,91 @@ int inlineBinarySearch(char *searchWord, int *numSteps)
 		push edi
 
 
+		xor eax, eax
+		xor ebx, ebx
+		xor ecx, ecx
 		xor edx, edx
+		xor esi, esi
+		xor edi, edi
 
-		lea edx, gWordList
-		mov ecx, edx
-		mov ebx, edx
-		add ecx, 0x12C //max
-		add ebx, 0x94  //mid
+		mov ebx, 37  //keep track of our mid
+		push ebx
+
+
+
+		lea esi, gWordList//load list word into edi to to find strlen
+		lodsd
+		mov ebx, eax
+
+		RELOADWORDS:
+		lea esi, searchWord//load search word into esi
+		lodsd
+		mov edx, eax //put it in ed
+
+		mov edi, ebx
+		xor eax, eax
+		xor ecx, ecx
+		not ecx
+
+		cld
+		repne scasb
+		not ecx
+		dec ecx
+		mov ebx, ecx  //length of list word
+
+
+		cmp ebx, x
+		jne UP_OR_DOWN
+		je COMPARE
+
+		UP_OR_DOWN:
 		
-		LOADWORDS:
-			mov edi, [ebx]
-			lea edx, searchWord
-			mov esi, [edx]
+		SMALL_COMPARE:
+		cmpsb
+		je SMALL_COMPARE
+		jl NEXTWORD_LOW
+		jg NEXTWORD_HIGH
 
-		CMPCHARS:
-			cmps 
-			je CMPCHARS
-			jl LOWSETUP
-			jg HIGHSETUP
+		
 
-		INCREMENT:
-			lea eax, searchWord
-			inc eax
-			mov ebx, [eax]
-			mov edi, esi
-			inc edi
-			mov eax, [edi]
-			cmp edx, x
-			je FOUND
-			jmp CMPCHARS
-		HIGHSETUP:
-			mov eax, ecx  ////move my max to eax
-			sub eax, ebx	//subtract max - mid
-			mov esi, 2
-			div esi		    // divide eax by 
-			mov edx, ecx   
-			sub edx, eax
-			mov ebx, edx
-			cmp ebx, ecx   //compare my max and mid so if the same then I know I am on last word in array to compare
-			je LASTCMP
-			jmp LOADWORDS			//otherwise load the new word based on esi...
+		COMPARE: //compare our word byte by byte
+		repz cmpsb //compare bytes till ecx is zero or flags is not zero anymore
+		jk NEXTWORD_HIGH //if we get a mismatch before counter is zero then we pull out next word
+		jg NEXTWORD_LOW  
+		je FOUND //else if equal we compare the next byte until counter runs out or we get mismatch
+			//if counter runs out 
 
-		LOWSETUP:
-					//move my max down by 1
-			mov ebx, edi	//put my mid into eax for div
-			mov eax, ecx
-			sub eax, ebx
+		NEXTWORD_LOW:
+		pop ebx
+		mov eax, ebx
+		mov ecx, 2
+		div ecx
+		push eax  //save our new mid
+		lea esi, gWordList //load first word of array into esi
+		add esi, eax
+			//check if mid = high
+		lodsd
+		mov esi, eax //put word in edi
+		mov ebx, eax 
+		jmp RELOADWORDS
+		
 
-			mov esi, 2
-			div esi
-			mov ecx, edi
-			sub ecx, 1
-			sub edi, eax    //put result back into esi this is my new mid
-			cmp ecx, edi   //compare my max and low so if the same then I know I am on last word in array to compare
-			je LASTCMP		
-			jmp LOADWORDS			//otherwise load the new word based on esi...
 
-		LASTINC:
-			inc ebx 
-			inc eax
-			inc edx
-			cmp edx, x
-			je FOUND
 
-		LASTCMP:
-		cmp eax, ebx
-		je LASTINC
 
+
+		NEXTWORD_HIGH:
+		
+
+
+		
+		
 		NOTFOUND:
 		mov elementNumber,-1
 
 
-		FOUND:
+			FOUND:
+			
 		mov elementNumber, ecx
 
 
@@ -229,7 +243,7 @@ void callInLineFunctions()
 	// get the length of the word list
 	int gListLength = sizeof(gWordList) / sizeof(char *);		// get size of word list
 
-	strcpy(word, "zebra");
+	strcpy(word, "absorbe");
 	tmpi = inlineBinarySearch(word, &x);
 	if (tmpi == -1)
 		printf("The word \"%s\" not found!\n\n", word);

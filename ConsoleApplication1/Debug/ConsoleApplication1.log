@@ -1,19 +1,21 @@
 ﻿  Source.cpp
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(145): warning C4102: 'INCREMENT': unreferenced label
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(193): warning C4102: 'NOTFOUND': unreferenced label
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(232): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(154): warning C4102: 'LOADWORDS': unreferenced label
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(168): warning C4102: 'COMPARE': unreferenced label
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(174): warning C4102: 'NEXTWORD_LOW': unreferenced label
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(180): warning C4102: 'NOTFOUND': unreferenced label
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(220): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(239): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(227): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(246): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(234): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(253): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(241): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(260): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(248): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(226): warning C4101: 'overlap': unreferenced local variable
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(225): warning C4101: 'srcA': unreferenced local variable
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(226): warning C4101: 'ptrSrcO': unreferenced local variable
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(226): warning C4101: 'ptrDstO': unreferenced local variable
-c:\users\odiep\workspace\assembly-binsearch\consoleapplication1\source.cpp(225): warning C4101: 'dstA': unreferenced local variable
-  ConsoleApplication1.vcxproj -> C:\Users\odiep\workspace\Assembly-BinSearch\Debug\ConsoleApplication1.exe
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(214): warning C4101: 'overlap': unreferenced local variable
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(213): warning C4101: 'srcA': unreferenced local variable
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(214): warning C4101: 'ptrSrcO': unreferenced local variable
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(214): warning C4101: 'ptrDstO': unreferenced local variable
+c:\users\odiep\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(213): warning C4101: 'dstA': unreferenced local variable
+  ConsoleApplication1.vcxproj -> C:\Users\odiep\documents\visual studio 2015\Projects\ConsoleApplication1\Debug\ConsoleApplication1.exe
