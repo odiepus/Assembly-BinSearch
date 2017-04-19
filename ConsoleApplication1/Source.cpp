@@ -115,66 +115,79 @@ int inlineBinarySearch(char *searchWord, int *numSteps)
 		//mov esi, [edi]			// get address where 21st word is stored in memory
 		//mov al, [esi + 1]			// put 2nd character from "discreet" which is an 'i' = 0x69 (105)
 		//mov elementNumber, eax
+		push eax
+		push ebx
+		push ecx
+		push edx
+		push esi
+		push edi
+
 
 		xor edx, edx
 
-		lea edi, gWordList
-		mov esi, [edi]
-		mov ecx, esi
-		add ecx, 75   //max
-		add esi, 37   //mid
+		lea edx, gWordList
+		mov ecx, edx
+		mov ebx, edx
+		add ecx, 0x12C //max
+		add ebx, 0x94  //mid
 		
-		LOAD:
-		mov eax, [esi]
-		mov ebx, [searchWord]
-		xor edx, edx
+		LOADWORDS:
+			mov edi, [ebx]
+			lea edx, searchWord
+			mov esi, [edx]
 
 		CMPCHARS:
-		cmp ebx, eax
-		je INC
-		jl LOW
-		jg HIGH
+			cmps 
+			je CMPCHARS
+			jl LOWSETUP
+			jg HIGHSETUP
 
-		INC:
-		lea eax, searchWord
-		inc eax
-		mov ebx, [eax]
-		mov edi, esi
-		inc edi
-		mov eax, [edi]
-		cmp edx, x
-		je FOUND
-		j CMPCHARS
+		INCREMENT:
+			lea eax, searchWord
+			inc eax
+			mov ebx, [eax]
+			mov edi, esi
+			inc edi
+			mov eax, [edi]
+			cmp edx, x
+			je FOUND
+			jmp CMPCHARS
+		HIGHSETUP:
+			mov eax, ecx  ////move my max to eax
+			sub eax, ebx	//subtract max - mid
+			mov esi, 2
+			div esi		    // divide eax by 
+			mov edx, ecx   
+			sub edx, eax
+			mov ebx, edx
+			cmp ebx, ecx   //compare my max and mid so if the same then I know I am on last word in array to compare
+			je LASTCMP
+			jmp LOADWORDS			//otherwise load the new word based on esi...
 
-		HIGH:
-		mov eax, ecx  ////move my max to edx
-		sub eax, esi	//subtract max - mid
-		mov ebx, 2
-		div ebx		    // divide eax by 2
-		sub esi, eax   // max - eax
-		cmp esi, ecx   //compare my max and mid so if the same then I know I am on last word in array to compare
-		je LASTCMP
-		j LOAD			//otherwise load the new word based on esi...
+		LOWSETUP:
+					//move my max down by 1
+			mov ebx, edi	//put my mid into eax for div
+			mov eax, ecx
+			sub eax, ebx
 
-		LOW:
-		sub ecx, 1		//move my max down by 1
-		mov eax, esi	//put my mid into eax for div
-		mov ebx, 2
-		div ebx			//div by 2
-		mov esi, eax    //put result back into esi this is my new mid
-		cmp ecx, esi   //compare my max and low so if the same then I know I am on last word in array to compare
-		je LASTWORD		
-		j LOAD			//otherwise load the new word based on esi...
+			mov esi, 2
+			div esi
+			mov ecx, edi
+			sub ecx, 1
+			sub edi, eax    //put result back into esi this is my new mid
+			cmp ecx, edi   //compare my max and low so if the same then I know I am on last word in array to compare
+			je LASTCMP		
+			jmp LOADWORDS			//otherwise load the new word based on esi...
 
 		LASTINC:
-		inc ebx 
-		inc eax
-	    inc edx
-		cmp edx, x
-		je FOUND
+			inc ebx 
+			inc eax
+			inc edx
+			cmp edx, x
+			je FOUND
 
 		LASTCMP:
-		comp eax, ebx
+		cmp eax, ebx
 		je LASTINC
 
 		NOTFOUND:
@@ -182,7 +195,7 @@ int inlineBinarySearch(char *searchWord, int *numSteps)
 
 
 		FOUND:
-		mov elementNumber, [ecx]
+		mov elementNumber, ecx
 
 
 	}
